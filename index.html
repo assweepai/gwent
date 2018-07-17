@@ -1,0 +1,207 @@
+<HTML>
+<head>
+	<title>Gwent</title>
+	<link rel="stylesheet" type="text/css" href="css/gwent_26.css" />
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/page_process_26.js"></script>
+	<script type="text/javascript" src="js/deck_generator_26.js"></script>
+	<script type="text/javascript" src="js/card_play_26.js"></script>
+	<script type="text/javascript" src="js/test_26.js"></script>
+</head>
+
+<body>
+
+	<table id="mainTable" border=0 height=90% width=100%>
+		<tr>
+			<td id="tbl_left" width="20%">
+			
+				<table id="left_table" height=100% width=100%>
+					<tr>
+						<td id="op_bKingTd" style="padding-left:20px">
+							<div id="op_kingDiv" class="deckDiv"><img id="op_kDeck" src=""></img></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="pl_info">
+							<div id="op_info_div" class="pl_info_div">
+								<table id="opponent_info_table" height=100% width=100%>
+									<tr>
+										<td id="op_info_td_1" align="center" valign="middle">
+											<font class="infoText">Opponent</font>
+										</td>
+										<td id="op_info_td_2" class="op_ttlTD" align="center" valign="middle">
+											<div id="op_sc" class="ttl_sc">
+												<font id="op_ttl_f" class="scoreFont">0</font>
+											</div>
+										</td>										
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>					
+					<tr>
+						<td>
+							<div id="weatherDiv" class="weatherDiv"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="pl_info">
+							<div id="pl_info_div" class="pl_info_div">
+								<table id="player_info_table" height=100% width=100%>
+									<tr>
+										<td id="pl_info_td_1" align="center" valign="middle">
+											<font class="infoText">Player</font>
+										</td>
+										<td id="pl_info_td_2" class="pl_ttlTD" align="center" valign="middle">
+											<div id="pl_sc" class="ttl_sc">
+												<font id="pl_ttl_f" class="scoreFont">0</font>
+											</div>
+										</td>										
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>					
+					<tr>
+						<td id="bKingTd" style="padding-left:20px">
+							<div id="kingDiv" class="deckDiv"><img id="kDeck" src=""></img></div>
+						</td>
+					</tr>
+				</table>			
+				
+			</td>	
+			<td id="tbl_center" width="60%">
+				
+				<table id="card_table" cellspacing="2" height=100% width=100%>
+					<tr>
+						<td id="op_row3_sc" class="op_scTD"></td>
+						<td id="op_row3">
+							<div id="op_row3_s" class="specDiv"></div>
+							<div class="normDiv">
+								<div id="op_row3_n" class="blarg"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td id="op_row2_sc" class="op_scTD"></td>
+						<td id="op_row2">
+							<div id="op_row2_s" class="specDiv"></div>
+							<div class="normDiv">
+								<div id="op_row2_n" class="blarg"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td id="op_row1_sc" class="op_scTD"></td>
+						<td id="op_row1">
+							<div id="op_row1_s" class="specDiv"></div>
+							<div class="normDiv">
+								<div id="op_row1_n" class="blarg"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td id="pl_row1_sc" class="pl_scTD"></td>
+						<td id="pl_row1">
+							<div id="pl_row1_s" class="specDiv"></div>
+							<div class="normDiv">
+								<div id="pl_row1_n" class="blarg"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td id="pl_row2_sc" class="pl_scTD"></td>
+						<td id="pl_row2">
+							<div id="pl_row2_s" class="specDiv"></div>
+							<div class="normDiv">
+								<div id="pl_row2_n" class="blarg"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td id="pl_row3_sc" class="pl_scTD"></td>
+						<td id="pl_row3">
+							<div id="pl_row3_s" class="specDiv"></div>
+							<div class="normDiv">
+								<div id="pl_row3_n" class="blarg"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td id="pl_hand_sc" class="pl_scTD"></td>
+						<td id="pl_hand" class="pl_hand">
+							<div id="handN" class="pHand"></div>
+						</td>
+					</tr>				
+				</table>
+				
+			</td>
+			<td id="tbl_right" width="20%">	
+				
+				<table id="right_table" height=100% width=100%>
+					<tr>
+						<td align="center" valign="top">
+							<div id="op_discardDiv" class="deckDiv"><img id="op_dDeck" src=""></img></div>
+							<div class="spacer"></div>
+							<div id="op_remainingDiv" class="deckDiv"><img id="op_rDeck" src=""></img></div>
+						</td>
+					</tr>
+					<tr>
+						<td id="info" class="infoDiv" align="center" valign="middle">
+						</td>
+					</tr>
+					<tr>
+						<td align="center" valign="bottom">
+							<div id="discardDiv" class="deckDiv" onclick="testFunc('discard');"><img id="dDeck" src=""></img></div>
+							<div class="spacer"></div>
+							<div id="remainingDiv" class="deckDiv"><img id="rDeck" src="" onclick="testFunc('deal');"></img></div>
+						</td>
+					</tr>
+				</table>				
+				
+			</td>	
+		</tr>
+	</table>
+	
+	<br>
+	
+	<div id="discardDeck" class="discardDeck">
+		<table height=100% width=100%>
+			<tr>
+				<td align="center" valign="middle" style="overflow:auto;">
+					<div id="ddDiv"></div>
+				</td>
+			</tr>
+		</table>	
+	</div>
+	
+	<br>		
+	
+	<div id="cardHold"></div>
+
+	<br>
+	
+	<div id="overlayHold"></div>
+
+	<br>
+	
+	<div id="handHold"></div>
+	
+	<br>
+	
+	<div id="op_discard"></div>	
+	
+	<br>
+
+</body>
+
+<script type="text/javascript">		
+	
+	$(document).ready(function () {
+		init_table();
+	});		
+	
+</script>
+
+</HTML>
+
